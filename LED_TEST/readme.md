@@ -2,6 +2,10 @@
 
 Este proyecto muestra el flujo completo para diseñar, preparar y fabricar una PCB simple usando KiCad, FlatCAM y EZCAD 2.
 
+Los videos de referencia fueron:
+- [LINK1](https://www.youtube.com/watch?v=PoYcjyghDx4)    
+- [LINK2](https://www.youtube.com/watch?v=wbIfWL4HjNY)
+
 ## 1. Diseñar el circuito en KICAD
 
 En esta etapa se crea el esquema eléctrico y la placa física del circuito, definiendo la distribución de los componentes y las conexiones finales.
