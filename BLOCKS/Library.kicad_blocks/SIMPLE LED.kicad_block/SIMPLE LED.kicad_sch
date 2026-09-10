@@ -2,7 +2,7 @@
 	(version 20260306)
 	(generator "eeschema")
 	(generator_version "10.0")
-	(uuid "8e92bc49-c0f9-4b0e-ab67-26e31cc44ec4")
+	(uuid "5fc76d86-dda4-4f37-a24c-608a62f0cb85")
 	(paper "A4")
 	(lib_symbols
 		(symbol "Connector:Conn_01x02_Pin"
@@ -1696,27 +1696,4 @@
 			)
 		)
 	)
-	(group "Energy"
-		(uuid "0507970b-a159-445f-9799-cb5a4ea8c309")
-		(lib_id "Library:SIMPLE LED")
-		(members "0d043a2a-766f-436d-a6be-07d75f22d570" "296e56d3-e44e-4f20-afe2-f7ddcbbec440"
-			"336c74c4-0a77-4d42-8cc9-31a95c56fdc2" "3b4362d4-1e17-43d8-a8e5-427d92d243e6"
-			"41511229-9041-49fa-8790-4fbe1045bcf2" "49c2c83f-1044-4b36-959d-e258eea08803"
-			"4d80d8f8-b538-41e9-ba70-0c9e685deb0d" "698499a3-c516-41a7-a9f0-8b26ce848442"
-			"6de40990-7b56-4f86-b121-63ed62cca118" "732a9375-cc83-453e-81cc-8491230344da"
-			"7a2360b0-93a4-4ef9-832e-f059e8f06ffd" "7a4dc7c6-4621-4dd7-9bfd-b073abf753d1"
-			"7f9ff5e7-55e4-4897-bc2f-61c979454b63" "812f750c-3b79-4db9-9d7e-f06f0f9cb30a"
-			"8a7769ed-49ea-4ff1-ab76-656122034cd4" "8ae7f0b5-786a-4e7e-8d21-f2c82ce211f5"
-			"b1043f95-1e6e-447f-8727-5bbef06ef9c7" "b94ad0a9-7aa1-458f-b26d-01df0040cfba"
-			"baf63909-ccfd-4a0f-9bd5-3515b51a3ea3" "cbf25a15-4ba1-4074-a97d-c4c4ffd81339"
-			"df47f464-745b-4baf-9299-818512ab5706" "e0b03784-d253-4678-bb64-66011822971a"
-			"e89176c0-2be3-4a16-a448-b7adf5a0d312" "ef3f4d39-32ce-452a-abb3-49c199d33af4"
-		)
-	)
-	(sheet_instances
-		(path "/"
-			(page "1")
-		)
-	)
-	(embedded_fonts no)
 )

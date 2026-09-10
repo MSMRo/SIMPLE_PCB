@@ -25,8 +25,16 @@ Cada etapa puede requerir ajustes relacionados con las dimensiones, la escala, e
 
 ### [LED_TEST](./LED_TEST/)
 
-Ejemplo de una PCB sencilla basada en un circuito de prueba con LED. Incluye archivos de KiCad, archivos Gerber, taladros, contorno de la placa y documentación del proceso con FlatCAM y EZCAD 2.
+Proyecto inicial de prueba con un circuito LED sencillo. Incluye el diseño en KiCad, exportación de archivos Gerber, preparación con FlatCAM y archivos listos para la etapa final de grabado o corte en EZCAD 2.
+
+### [LED_TEST2](./LED_TEST2/)
+
+Segunda iteración del mismo flujo de fabricación, con una placa de prueba adicional y archivos generados para la preparación vectorial: Gerber, contorno de placa, proyecto de FlatCAM y salida DXF para EZCAD 2. Sirve como referencia para comparar variaciones del diseño y del proceso de fabricación.
+
+### [BLOCKS](./BLOCKS/)
+
+Librería reutilizable de bloques de KiCad con un bloque llamado "SIMPLE LED". Permite encapsular y reutilizar partes del diseño para acelerar la creación de nuevos proyectos o variaciones del circuito base.
 
 ## Objetivo del repositorio
 
-El objetivo es disponer de ejemplos reproducibles que sirvan como referencia para experimentar con el diseño de PCBs y entender la comunicación entre las distintas herramientas del proceso. Los archivos pueden utilizarse como punto de partida para crear diseños propios y adaptar el flujo a diferentes máquinas y materiales.
+El objetivo es disponer de ejemplos reproducibles que sirvan como referencia para experimentar con el diseño de PCBs y entender la comunicación entre las distintas herramientas del proceso. Los archivos pueden utilizarse como punto de partida para crear diseños propios, reutilizar bloques funcionales y adaptar el flujo a diferentes máquinas y materiales.

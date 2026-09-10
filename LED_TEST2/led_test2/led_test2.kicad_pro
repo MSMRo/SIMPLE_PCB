@@ -41,7 +41,7 @@
         "pads": {
           "drill": 0.8,
           "height": 1.27,
-          "width": 2.54
+          "width": 1.27
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -50,7 +50,23 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.8
+          "border_display_style": 2,
+          "border_hatch_pitch": 0.5,
+          "corner_radius": 0.0,
+          "corner_smoothing": 0,
+          "fill_mode": 0,
+          "hatch_gap": 1.5,
+          "hatch_orientation": 0.0,
+          "hatch_smoothing_level": 0,
+          "hatch_smoothing_value": 0.1,
+          "hatch_thickness": 1.0,
+          "min_clearance": 0.5,
+          "min_island_area": 10.0,
+          "min_thickness": 0.25,
+          "pad_connection": 1,
+          "remove_islands": 0,
+          "thermal_relief_gap": 0.5,
+          "thermal_relief_spoke_width": 0.5
         }
       },
       "diff_pair_dimensions": [
@@ -195,7 +211,8 @@
       ],
       "track_widths": [
         0.0,
-        1.0
+        1.0,
+        1.5
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -486,7 +503,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "led_test.kicad_pro",
+    "filename": "led_test2.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -522,7 +539,7 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "./",
+      "plot": "",
       "specctra_dsn": "",
       "step": "",
       "vrml": ""
@@ -588,6 +605,18 @@
         },
         {
           "group_by": true,
+          "label": "Exclude from Simulation",
+          "name": "${EXCLUDE_FROM_SIM}",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "Exclude from Position Files",
+          "name": "${EXCLUDE_FROM_POS_FILES}",
+          "show": true
+        },
+        {
+          "group_by": true,
           "label": "Footprint",
           "name": "Footprint",
           "show": true
@@ -642,17 +671,17 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "led_test.kicad_sch",
+        "filename": "led_test2.kicad_sch",
         "name": "Root",
-        "uuid": "8e92bc49-c0f9-4b0e-ab67-26e31cc44ec4"
+        "uuid": "7a6f0f3e-883a-4db9-9adc-71f93767e2d8"
       }
     ],
-    "used_designators": "J1-2,R1-2,#FLG1-4,SW1-2,D1-2,#PWR1-2",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [
     [
-      "8e92bc49-c0f9-4b0e-ab67-26e31cc44ec4",
+      "7a6f0f3e-883a-4db9-9adc-71f93767e2d8",
       "Root"
     ]
   ],
