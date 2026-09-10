@@ -38,3 +38,13 @@ Librería reutilizable de bloques de KiCad con un bloque llamado "SIMPLE LED". P
 ## Objetivo del repositorio
 
 El objetivo es disponer de ejemplos reproducibles que sirvan como referencia para experimentar con el diseño de PCBs y entender la comunicación entre las distintas herramientas del proceso. Los archivos pueden utilizarse como punto de partida para crear diseños propios, reutilizar bloques funcionales y adaptar el flujo a diferentes máquinas y materiales.
+
+## Videos útiles
+
+- ARDUINOLOVER:
+    - Commarker B4 Fiber Laser - PCB - Preparando los archivos  [LINK](https://www.youtube.com/watch?v=ZPhiWutrlDI&t=2s)
+    - Commarker B4 Fiber Laser - Fabricando la PCB [LINK](https://www.youtube.com/watch?v=WB-G7eJQOjc&t=905s)
+
+- KICAD:
+    - KiCad 10 and FreeCAD 1.1 are substantial [LINK](https://www.youtube.com/watch?v=RrsPh7PYMvw)
+    - KiCad Design Blocks Tutorial | Reuse Circuit Modules Easily [LINK](https://www.youtube.com/watch?v=wRWg5tdpsog)
