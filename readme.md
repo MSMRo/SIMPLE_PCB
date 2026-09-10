@@ -1,5 +1,5 @@
-# Ejemplos para fabricar PCBs
-
+# Ejemplos para fabricar PCBs con corte láser
+![](./IMGS/Screenshot%202026-09-09%20210139.png)
 Este repositorio reúne una serie de ejemplos prácticos para aprender y documentar el flujo de trabajo necesario para diseñar y fabricar placas de circuito impreso (PCB) de forma sencilla.
 
 Los proyectos combinan **KiCad**, **FlatCAM** y **EZCAD 2**, desde el diseño eléctrico y la preparación de los archivos de fabricación hasta el grabado o corte de la placa con una máquina láser.
@@ -26,10 +26,13 @@ Cada etapa puede requerir ajustes relacionados con las dimensiones, la escala, e
 ### [LED_TEST](./LED_TEST/)
 
 Proyecto inicial de prueba con un circuito LED sencillo. Incluye el diseño en KiCad, exportación de archivos Gerber, preparación con FlatCAM y archivos listos para la etapa final de grabado o corte en EZCAD 2.
+![](./LED_TEST/imgs/Screenshot%202026-09-08%20224107.png)
 
 ### [LED_TEST2](./LED_TEST2/)
 
 Segunda iteración del mismo flujo de fabricación, con una placa de prueba adicional y archivos generados para la preparación vectorial: Gerber, contorno de placa, proyecto de FlatCAM y salida DXF para EZCAD 2. Sirve como referencia para comparar variaciones del diseño y del proceso de fabricación.
+
+![](./LED_TEST2/imgs/Screenshot%202026-09-09%20211820.png)
 
 ### [BLOCKS](./BLOCKS/)
 
