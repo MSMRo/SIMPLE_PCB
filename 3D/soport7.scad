@@ -1,8 +1,9 @@
 /* =================================================================
    Fluorímetro Integrado + Case Arduino Mega 2560 R3 + Tapa Óptica
-   - Cavidad del microtubo de 0.5 mL 100% pasante y monolítica
-   - Sin tabiques ciegos interiores (verificado para rayos X / FreeCAD)
-   - Disposición óptica a 90° con sensor AS7341 y LED de 3 mm
+   - Bloque óptico ampliado a 44 x 44 mm (sin colisión de pernos a 90°)
+   - Separación sólida > 4 mm entre tornillos interiores
+   - Cavidad para microtubo 0.5 mL 100% pasante y visible
+   - Pared divisoria con el case 100% rellena y maciza
    ================================================================= */
 
 $fn = 60;
@@ -43,25 +44,26 @@ jack_y_pos       = 3.0;
 // =================================================================
 // 2. PARÁMETROS DEL BLOQUE ÓPTICO Y MICROTUBO 0.5 mL
 // =================================================================
-block_size       = 38.0;  
+// Ampliado a 44 x 44 mm para garantizar paredes gruesas y cero colisión
+block_size       = 44.0;  
 block_height     = 38.0;  
 corner_radius    = 3.5;
 
-// Dimensiones de cavidad del tubo 0.5 mL
+// Dimensiones de cavidad del microtubo de 0.5 mL
 bottom_window_dia = 5.5;  // Ventana inferior de visualización (mm)
 tube_body_dia     = 8.4;  // Diámetro superior del microtubo (mm)
 rim_dia           = 13.5; // Asiento para pestaña/anillo superior (mm)
 rim_depth         = 3.5;  // Profundidad del rebaje para la pestaña (mm)
 
-collar_h          = 5.0;  // Altura del cuello sobresaliente (mm)
+collar_h          = 5.0;  // Altura del cuello exterior (mm)
 collar_od         = 21.0; // Diámetro exterior del cuello (mm)
 collar_id         = 15.0; // Diámetro interior del cuello (mm)
 
-optical_z         = 11.5; // Eje de los haces ópticos apuntando a la muestra
+optical_z         = 11.5; // Eje de lectura óptica apuntando a la muestra
 pinhole_dia       = 2.0;
 
-tube_pos_x        = block_size / 2; // 19.0 mm
-tube_pos_y        = block_size / 2; // 19.0 mm
+tube_pos_x        = block_size / 2; // 22.0 mm
+tube_pos_y        = block_size / 2; // 22.0 mm
 
 // Placas AS7341 y Placa LED
 pcb_w             = 26.0;
@@ -70,7 +72,7 @@ pocket_depth      = 3.0;
 hole_pitch_w      = 20.32;
 hole_pitch_h      = 12.70;
 mount_screw_dia   = 2.2;
-mount_screw_len   = 6.5;
+mount_screw_len   = 4.5; // Profundidad calibrada sin sobrepaso
 
 fluor_pos_x       = case_outer_x;
 fluor_pos_y       = (case_outer_y - block_size) / 2;
@@ -98,7 +100,7 @@ translate([fluor_pos_x + block_size/2, -collar_od - 8, 0])
 
 module fluorimetro_completo() {
     difference() {
-        // --- 1. SÓLIDOS (Case + Bloque + Cuello) ---
+        // --- 1. SÓLIDOS (Case + Bloque Óptico + Cuello) ---
         union() {
             case_arduino_mega();
 
@@ -113,7 +115,7 @@ module fluorimetro_completo() {
         translate([fluor_pos_x + tube_pos_x, fluor_pos_y + tube_pos_y, 0])
             cavidad_tubo_unificada();
 
-        // --- 3. MONTAJES ÓPTICOS A 90° ---
+        // --- 3. MONTAJES ÓPTICOS A 90° (Sin interferencia física) ---
         // Montura Cara Y (Sensor AS7341)
         translate([fluor_pos_x, fluor_pos_y, 0])
             cavidad_montura();
@@ -122,19 +124,15 @@ module fluorimetro_completo() {
         translate([fluor_pos_x + block_size, fluor_pos_y, 0])
             rotate([0, 0, 90])
                 cavidad_montura();
-
-        // --- 4. PASAMUROS DE CABLEADO HACIA EL ARDUINO ---
-        translate([case_outer_x - mega_wall - 1, fluor_pos_y + 10.0, mega_floor + standoff_h])
-            cube([mega_wall + 2, 18.0, 7.0]);
     }
 }
 
-// Cavidad de revolución completamente continua (sin cortes ni tabiques)
+// Cavidad continua pasante de arriba a abajo
 module cavidad_tubo_unificada() {
-    z_bottom   = -1.0;                         // Traspasa la base inferior
+    z_bottom   = -1.0;                         // Atraviesa la base inferior
     z_cone_end = 17.0;                         // Fin de la zona cónica
     z_rim_seat = block_height - rim_depth;     // Asiento de la pestaña (34.5 mm)
-    z_top      = block_height + collar_h + 1.0;// Traspasa la boca del cuello (44 mm)
+    z_top      = block_height + collar_h + 1.0;// Atraviesa la boca del cuello (44 mm)
 
     rotate_extrude() {
         polygon(points = [
@@ -159,7 +157,7 @@ module cavidad_montura() {
         rotate([-90, 0, 0])
             cylinder(h = tube_pos_y + 1, d = pinhole_dia);
 
-    // Bolsillo para el cuerpo del PCB
+    // Bolsillo para la placa PCB
     translate([tube_pos_x - pcb_w/2, -0.1, optical_z - pcb_h/2])
         cube([pcb_w, pocket_depth + 0.1, pcb_h]);
 
@@ -171,7 +169,7 @@ module cavidad_montura() {
     translate([tube_pos_x - 9.0, -0.1, optical_z - pcb_h/2 - 2.0])
         cube([18.0, pocket_depth + 0.1, 4.0]);
 
-    // 4 Agujeros de fijación M2 / M2.5
+    // 4 Agujeros ciegos de fijación M2 / M2.5 independientes
     for (dw = [-hole_pitch_w/2, hole_pitch_w/2]) {
         for (dh = [-hole_pitch_h/2, hole_pitch_h/2]) {
             translate([tube_pos_x + dw, pocket_depth - 0.1, optical_z + dh])
@@ -238,7 +236,7 @@ module case_arduino_mega() {
     }
 }
 
-// Auxiliar para redondeos
+// Módulo auxiliar de redondeo
 module rounded_cube(size, r) {
     x = size[0];
     y = size[1];
