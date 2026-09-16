@@ -52,5 +52,6 @@ El objetivo es disponer de ejemplos reproducibles que sirvan como referencia par
     - KiCad 10 and FreeCAD 1.1 are substantial [LINK](https://www.youtube.com/watch?v=RrsPh7PYMvw)
     - KiCad Design Blocks Tutorial | Reuse Circuit Modules Easily [LINK](https://www.youtube.com/watch?v=wRWg5tdpsog)
 
-
-Download custom folder from github: https://kinolien.github.io/gitzip
+## USEFUL TOOLS
+- Download custom folder from github: https://kinolien.github.io/gitzip
+- View kicad design in web: https://kicanvas.org/
